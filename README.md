@@ -90,7 +90,7 @@ The event is rejected only if and only if not valid in terms of format, regardle
     7. `restaurantId` - required integer (64 bit), id of the restaurant in the system, most probably other than restaurant id in external order source
     8. `fullfillmentMethod` - required object with required discriminator field `tag` taking value `Takeaway` or `Delivery` or `DineIn`. Tells how the restaurant is supposed to fulfill the order:
         1. `Takeaway` - an order must only be prepared in a restaurant, it will be taken away by customer
-        1. `Courier` - as above, but picked by external courier
+        1. `CourierPickUp` - an order must only be prepared in a restaurant, it will be taken away by external courier
         1. `Delivery` -  an order must only be prepared and delivered by a restaurant, for this tag additional field `address` is required with fields:
             1. `street` - required non-empty text
             2. `streetNumber` - required non-empty text
@@ -121,7 +121,7 @@ The event is rejected only if and only if not valid in terms of format, regardle
     15. `discounts` - optional, non-empty array of objects containing:
         1. `name` - required text, max 256 characters long
         1. `description` - required text, max 256 characters long
-        1. `value` - required positive number
+        1. `value` - required positive value
     16. `totalGrossPrice` - required number, should be the sum of products' grossPrices if provided for all products
 
 ### Response
