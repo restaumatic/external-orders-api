@@ -6,7 +6,7 @@ Restaumatic External Orders API is bidirectional API between Restaumatic and Ext
 
 ## Order Placed
 
-> POST `[restaumatic base URL]/api/v1/externalorders/rpc?OrderPlaced`
+> POST `[restaumatic base URL]/api/v1/external/rpc
 
 ### Headers
 
