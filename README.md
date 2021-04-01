@@ -4,7 +4,7 @@ The goal of the API is to separate, isolate and outsource the concern of handlin
 
 Restaumatic External Orders API is bidirectional API between Restaumatic and External Orders Proxies. Restaumatic system running in the cloud exposes endpoint hooks and calls the endpoints hooks of an External Orders Proxy according to the messaging flow specified below.
 
-## OrderPlaced
+## Order Placed
 
 > POST `[restaumatic base URL]/api/v1/externalorders/rpc?OrderPlaced`
 
@@ -115,3 +115,47 @@ The event is rejected only if and only if not valid in terms of format, regardle
 ### Response
 
 `HTTP 400` if invalid body, `HTTP 401` if the client not authorized to place the order, `HTTP 200` otherwise.
+
+## Order Accepted
+
+> POST `[?]/?`
+
+### Headers
+### Body
+
+#### Description
+
+### Response
+
+## Order Rejected
+
+> POST `[?]/?`
+
+### Headers
+### Body
+#### Description
+
+### Response
+
+
+## Order in Delivery
+
+> POST `[?]/?`
+
+### Headers
+### Body
+
+#### Description
+
+### Response
+
+## Order Closed
+
+> POST `[?]/?`
+
+### Headers
+### Body
+
+#### Description
+
+### Response
