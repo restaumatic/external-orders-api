@@ -106,8 +106,11 @@ The event is rejected only if and only if not valid in terms of format, regardle
         4. `locale` - optional, one of PL, EN, EN_GB, RO, RU, CS, SK, HR, DE, NL, ES (potentially extended in the future)
     13. `customerOrderNote` - optional non-empty text up to 512 characters, a note a customer can place on the order
     14. `products` - required non empty array of objects
-        1. vatRate - optional letter A..G, when vatRate provided then the restaurant can print fiscal receipt for the order
-    15. `totalGrossPrice` - required number
+        1. `name` - required, not-empty text
+        1. `quantity`" - required positive integer
+        1. `grossPrice` - optional positive number
+        1. `vatRate` - optional text, vat rate ranging from A to G, if provided then the restaurant can print fiscal receipt for the order
+    15. `totalGrossPrice` - required number, should be the sum of products' grossPrices if provided for all products
 
 ### Response
 
