@@ -96,10 +96,10 @@ The event is rejected only if and only if not valid in terms of format, regardle
     10. `subjectToOverwriteFullfillmentTime` - required boolean - if fullfilment time can be overwritten upon order acceptance
     11. `paymentMethod` - required one of `Cash` or `Online` or `Card` or `Prepaid`.
     12. `customer` - required object
-        1. email - optional email
-        2. fullName - text, as full as provided by external order source
-        3. phone - optional text
-        4. locale - optional, one of PL, EN, EN_GB, RO, RU, CS, SK, HR, DE, NL, ES (potentially extended in the future)
+        1. `email` - optional not-empty email
+        2. `fullName` - text, as full as provided by external order source
+        3. `phone` - optional text
+        4. `locale` - optional, one of PL, EN, EN_GB, RO, RU, CS, SK, HR, DE, NL, ES (potentially extended in the future)
     13. `customerOrderNote` - optional non-empty text up to 512 characters, a note a customer can place on the order
     14. `products` - required non empty array of objects
         1. vatRate - optional letter A..G, when vatRate provided then the restaurant can print fiscal receipt for the order
