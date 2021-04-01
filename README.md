@@ -112,6 +112,7 @@ The event is rejected only if and only if not valid in terms of format, regardle
         1. `grossPrice` - optional positive number
         1. `vatRate` - optional text, letter ranging from A to G (as defined in regulation https://www.gov.pl/web/finanse/do-31-lipca-zmien-oznaczenia-w-kasach-rejestrujacych), if provided then the restaurant can print fiscal receipt for the order
     15. `totalGrossPrice` - required number, should be the sum of products' grossPrices if provided for all products
+    16. `discounts` -- TODO
 
 ### Response
 
