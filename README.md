@@ -1,6 +1,8 @@
 # Restaumatic External Orders API
 
-Restaumatic External Orders API is bidirectional API between Restaumatic and so called *External Orders Proxies*. Restaumatic system running in the cloud exposes endpoint hooks and calls the endpoints hooks of an External Orders Proxy according to the messaging flow specified below.
+The goal of the API is to separate, isolate and outsource the concern of handling specifics of external order sources (including but not restricting to portals) to the external parties called *External Orders Proxies*.
+
+Restaumatic External Orders API is bidirectional API between Restaumatic and External Orders Proxies. Restaumatic system running in the cloud exposes endpoint hooks and calls the endpoints hooks of an External Orders Proxy according to the messaging flow specified below.
 
 ## OrderPlaced
 
