@@ -114,48 +114,104 @@ The event is rejected only if and only if not valid in terms of format, regardle
 
 ### Response
 
-`HTTP 400` if invalid body, `HTTP 401` if the client not authorized to place the order, `HTTP 200` otherwise.
+`HTTP 400` if invalid body, `HTTP 401` if the External Orders Proxy not authorized to place the order, `HTTP 200` otherwise.
 
 ## Order Accepted
 
-> POST `[?]/?`
+> POST `[external orders proxy base URL]/orderAccepted`
 
 ### Headers
+
+- `'Content-type': 'application/json'`
+- `'authorization': 'Token token=[API_TOKEN]'` where `API_TOKEN` is Restaumatic credential, provided by External Orders Proxy when enabling integration
+
 ### Body
+
+```
+{
+  "externalOrderId": "89a3bb4a-9257-11eb-a8b3-0242ac130003", // 1
+  "restaumaticOrderId": "362718" // 2
+}
+```
 
 #### Description
 
+1. `externalOrderId` - required UUID, external order id as provided in Order Placed event
+2. `restaumaticOrderId` - required text, order id in Restaumatic
+
 ### Response
+
+`HTTP 400` if invalid body, `HTTP 401` if Restaumatic not authorized to accept the order, `HTTP 200` otherwise.
 
 ## Order Rejected
 
-> POST `[?]/?`
+> POST `[external orders proxy base URL]/orderRejected`
 
 ### Headers
+
+- `'Content-type': 'application/json'`
+- `'authorization': 'Token token=[API_TOKEN]'` where `API_TOKEN` is Restaumatic credential, provided by External Orders Proxy when enabling integration
+
 ### Body
+
+```
+{
+  "externalOrderId": "89a3bb4a-9257-11eb-a8b3-0242ac130003" // 1
+}
+```
+
 #### Description
 
+1. `externalOrderId` :: required UUID, external order id as provided in Order Placed event
+
 ### Response
+
+`HTTP 400` if invalid body, `HTTP 401` if Restaumatic not authorized to reject the order, `HTTP 200` otherwise.
 
 
 ## Order in Delivery
 
-> POST `[?]/?`
+> POST `[external order proxy base URL]/orderInDelivery`
 
 ### Headers
+
+- `'Content-type': 'application/json'`
+- `'authorization': 'Token token=[API_TOKEN]'` where `API_TOKEN` is Restaumatic credential, provided by External Orders Proxy when enabling integration
+
 ### Body
+
+```
+{
+  "restaumaticOrderId": "362718" // 1
+}
+```
 
 #### Description
 
+1. `restaumaticOrderId` - required text, order id in Restaumatic
+
 ### Response
+
+`HTTP 400` if invalid body, `HTTP 401` if Restaumatic not authorized to update the order, `HTTP 200` otherwise.
+
 
 ## Order Closed
 
-> POST `[?]/?`
+> POST `[external orders proxy base URL]/orderClosed`
 
 ### Headers
 ### Body
 
+```
+{
+  "restaumaticOrderId": "362718" // 1
+}
+```
+
 #### Description
 
+1. `restaumaticOrderId` - required text, order id in Restaumatic
+
 ### Response
+
+`HTTP 400` if invalid body, `HTTP 401` if Restaumatic not authorized to close the order, `HTTP 200` otherwise.
