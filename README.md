@@ -62,7 +62,14 @@ Restaumatic External Orders API is bidirectional API between Restaumatic and Ext
         "vatRate": "B" // optional
       },
     ],
-    "totalGrossPrice": 20.38 // 3.15
+    "discounts" [ // 3.15
+      {
+        "name": "Cheap Mondays",
+        "description": "All 15% off"
+        "value": 10.19
+      }
+    ],
+    "totalGrossPrice": 20.38 // 3.16
   }
 }
 ```
@@ -111,8 +118,11 @@ The event is rejected only if and only if not valid in terms of format, regardle
         1. `quantity`" - required positive integer
         1. `grossPrice` - optional positive number
         1. `vatRate` - optional text, letter ranging from A to G (as defined in regulation https://www.gov.pl/web/finanse/do-31-lipca-zmien-oznaczenia-w-kasach-rejestrujacych), if provided then the restaurant can print fiscal receipt for the order
-    15. `totalGrossPrice` - required number, should be the sum of products' grossPrices if provided for all products
-    16. `discounts` -- TODO
+    15. `discounts` - optional, non-empty array of objects containing:
+        1. `name` - required text, max 256 characters long
+        1. `description` - required text, max 256 characters long
+        1. `value` - required positive number
+    16. `totalGrossPrice` - required number, should be the sum of products' grossPrices if provided for all products
 
 ### Response
 
