@@ -65,7 +65,7 @@ Restaumatic External Orders API is bidirectional API between Restaumatic and Ext
     "discounts" [ // 3.15
       {
         "name": "Cheap Mondays",
-        "description": "All 15% off"
+        "description": "All 15% off",
         "value": 10.19
       }
     ],
