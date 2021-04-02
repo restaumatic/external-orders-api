@@ -46,7 +46,7 @@ Restaumatic External Orders API is bidirectional API between Restaumatic and Ext
     },
     "fullfillmentTime": "2021-03-31T17:30:00.000Z", // 3.9
     "subjectToOverwriteFullfillmentTime": true, // 3.10
-    "paymentMethod": "Cash" // 3.11
+    "paymentMethod": "Cash", // 3.11
     "customer": { // 3.12
       "fullName": "John Doe",
       "email": "john.doe@mymail.com",
