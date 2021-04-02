@@ -36,7 +36,7 @@ Restaumatic External Orders API is bidirectional API between Restaumatic and Ext
         "floor": "2",
         "postCode": "12-345",
         "city": "London",
-        "country": "en_GB",
+        "country": "GB",
         "formattedAddress": "High St. 12/10 second floor",
         "coordinates": {
           "lon": 20.02341,
