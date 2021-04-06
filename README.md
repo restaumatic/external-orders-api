@@ -12,6 +12,9 @@ Use case:
   5. Restaumatic updates the progress of the order with `Order in Delivery` or `Order Closed` event
   6. External Orders Proxy updated the order in external ordering party accordingly
 
+The allowed messaging are determined by the following conversation state diagram:
+![](resources/eventsStateDiagram.png)
+
 
 ## Order Placed
 
