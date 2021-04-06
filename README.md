@@ -4,6 +4,15 @@ The goal of the API is to separate, isolate and outsource the concern of handlin
 
 Restaumatic External Orders API is bidirectional API between Restaumatic and External Orders Proxies. Restaumatic system running in the cloud exposes endpoint hooks and calls the endpoints hooks of an External Orders Proxy according to the messaging flow specified below.
 
+Use case:
+  1. Order is created in one of many food online ordering parties for the restaurant that is powered by Restaumatic system
+  2. External Orders Proxy fetches incoming orders from ordering party for Restaumatic restaurants and places the order in Restaumatic via `Order Placed` (see the details in sections below) event
+  3. Restaumatic responds to External Order Proxy with `Order Accepted` or `Order Rejected` events when applicable
+  4. External Orders Proxy updated the order in external ordering party accordingly
+  5. Restaumatic updates the progress of the order with `Order in Delivery` or `Order Closed` event
+  6. External Orders Proxy updated the order in external ordering party accordingly
+
+
 ## Order Placed
 
 > POST `[restaumatic base URL]/api/v1/external/rpc`
