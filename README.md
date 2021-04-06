@@ -37,7 +37,7 @@ The allowed messaging are determined by the following conversation state diagram
     "externalOrderReferenceId": "YYU-81947", // 3.3
     "shortExternalOrderReferenceId": "947", // 3.4
     "subjectToReject": true, // 3.5
-    "subjectToAcceptBefore": "2021-03-31T16:20:54.723Z", // 3.6
+    "subjectToAcceptBefore": "2021-03-31T16:20:54Z", // 3.6
     "restaurantId": 1567, // 3.7
     "fullfillmentMethod": { // 3.8
       "tag": "Delivery",
@@ -56,7 +56,7 @@ The allowed messaging are determined by the following conversation state diagram
         }
       }
     },
-    "fullfillmentTime": "2021-03-31T17:30:00.000Z", // 3.9
+    "fullfillmentTime": "2021-03-31T17:30:00Z", // 3.9
     "subjectToOverwriteFullfillmentTime": true, // 3.10
     "paymentMethod": "Cash", // 3.11
     "customer": { // 3.12
@@ -68,10 +68,10 @@ The allowed messaging are determined by the following conversation state diagram
     "customerOrderNote": "Please be on time", // 3.13
     "products": [ // 3.14
       {
-        "name": "Chopped Pork + Potatos + Cabbage, XXL", // required
-        "quantity": 2, // optional, if not present assumed to be 1
-        "grossPrice": 20.38, // optional
-        "vatRate": "B" // optional
+        "name": "Chopped Pork + Potatos + Cabbage, XXL",
+        "quantity": 2,
+        "grossPrice": 20.38,
+        "vatRate": "B"
       },
     ],
     "discounts": [ // 3.15
