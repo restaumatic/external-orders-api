@@ -72,7 +72,7 @@ The allowed messaging are determined by the following conversation state diagram
       {
         "name": "Chopped Pork + Potatos + Cabbage, XXL",
         "quantity": 1,
-        "grossPrice": 20.38,
+        "grossUnitPrice": 20.38,
         "vatRate": "B"
       },
     ],
