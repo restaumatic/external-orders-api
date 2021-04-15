@@ -160,15 +160,17 @@ The event is rejected only if and only if not valid in terms of format, regardle
 
 ```
 {
-  "externalOrderId": "89a3bb4a-9257-11eb-a8b3-0242ac130003", // 1
-  "restaumaticOrderId": "362718" // 2
+  "externalOrderId": "89a3bb4a-9257-11eb-a8b3-0242ac130003",
+  "restaumaticOrderId": "362718",
+  "overwrittenFullfillmentTime": "2021-03-31T17:40:00Z"
 }
 ```
 
 #### Description
 
 1. `externalOrderId` - required UUID, external order id as provided in Order Placed event
-2. `restaumaticOrderId` - required text, order id in Restaumatic
+1. `restaumaticOrderId` - required text, order id in Restaumatic
+1. `overwrittenFullfillmentTime` - optional zulu (UTC) time in ISO 8601 format e.g "2019-05-14T15:44:54.723Z", present if and only if the mentioned order was `subjectToOverwriteFullfillmentTime`.
 
 ### Response
 
@@ -187,7 +189,7 @@ The event is rejected only if and only if not valid in terms of format, regardle
 
 ```
 {
-  "externalOrderId": "89a3bb4a-9257-11eb-a8b3-0242ac130003" // 1
+  "externalOrderId": "89a3bb4a-9257-11eb-a8b3-0242ac130003"
 }
 ```
 
@@ -213,7 +215,7 @@ The event is rejected only if and only if not valid in terms of format, regardle
 
 ```
 {
-  "restaumaticOrderId": "362718" // 1
+  "restaumaticOrderId": "362718"
 }
 ```
 
