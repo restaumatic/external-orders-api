@@ -237,7 +237,7 @@ The event is rejected only if and only if not valid in terms of format, regardle
 
 ```
 {
-  "restaumaticOrderId": "362718" // 1
+  "restaumaticOrderId": "362718"
 }
 ```
 
