@@ -18,7 +18,7 @@ The allowed messaging are determined by the following conversation state diagram
 
 ## Order Placed
 
-> POST `[restaumatic base URL]/api/v1/external/rpc`
+> POST `[restaumatic base URL]/api/v1/external/orderPlaced`
 
 ### Headers
 
