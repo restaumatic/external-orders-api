@@ -40,6 +40,7 @@ The allowed messaging are determined by the following conversation state diagram
     "orderedAt": "2021-03-31T16:10:03Z",
     "subjectToReject": true,
     "subjectToAcceptBefore": "2021-03-31T16:20:03Z",
+    "subjectToCancel": false,
     "fullfillmentMethod": {
       "tag": "Delivery",
       "address": {
