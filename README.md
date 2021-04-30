@@ -57,7 +57,7 @@ The allowed messaging are determined by the following conversation state diagram
         }
       }
     },
-    "fullfillmentTime": "2021-03-31T17:30:00Z",
+    "requestedFullfillmentTime": "2021-03-31T17:30:00Z",
     "subjectToOverwriteFullfillmentTime": true,
     "paymentMethod": "Cash",
     "customer": {
@@ -121,7 +121,7 @@ The event is rejected only if and only if not valid in terms of format, regardle
                 1. lat - required number, latitude
                 2. lon - required number, longitude
         1. `DineIn` - an order must only be prepared and delivered to a restaurant table, could potentially include table number (e.g. via scanning qr code)
-    1. `fullfillmentTime` - zulu (UTC) time in ISO 8601 format e.g "2019-05-14T15:44:54.723Z", when the restaurant is suppossed to fullfill the order, which is: either getting the order ready to be picked up by the external courier or customer (`fullfillmentMethod==Takeaway`) or getting the order delivered by the restaurant's courier (`fullfillmentMethod==Delivery`) or serving the order at the restaurant's table (`fullfillmentMethod==DineIn`)
+    1. `requestedFullfillmentTime` - optinal zulu (UTC) time in ISO 8601 format e.g "2019-05-14T15:44:54.723Z", when the restaurant is suppossed to fullfill the order, which is: either getting the order ready to be picked up by the external courier or customer (`fullfillmentMethod==Takeaway`) or getting the order delivered by the restaurant's courier (`fullfillmentMethod==Delivery`) or serving the order at the restaurant's table (`fullfillmentMethod==DineIn`). If not provided it's assumed to be as soon as possible.
     1. `subjectToOverwriteFullfillmentTime` - required boolean - if fullfilment time can be overwritten upon order acceptance
         > currently supporting only `true` value
     1. `paymentMethod` - required one of `Cash` or `Online` or `Card` or `Prepaid`.
