@@ -84,7 +84,8 @@ The allowed messaging are determined by the following conversation state diagram
         "value": 10.28
       }
     ],
-    "totalGrossPrice": 10.10
+    "deliveryFee" : 5.00
+    "totalGrossPrice": 15.10
   }
 }
 ```
@@ -142,6 +143,7 @@ The event is rejected only if and only if not valid in terms of format, regardle
         1. `name` - required text, max 256 characters long
         1. `description` - required text, max 256 characters long
         1. `value` - required positive value
+    1. `deliveryFee` - required, delivery fee
     1. `totalGrossPrice` - required number, should be the sum of products' grossPrices if provided for all products
 
 ### Response
