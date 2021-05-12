@@ -144,7 +144,7 @@ The event is rejected only if and only if not valid in terms of format, regardle
         1. `description` - required text, max 256 characters long
         1. `value` - required positive value
     1. `deliveryFee` - required, delivery fee
-    1. `totalGrossPrice` - required number, should be the sum of products' grossPrices if provided for all products
+    1. `totalGrossPrice` - required non-negative number, should be the sum of products' grossPrices if provided for all products
 
 ### Response
 
