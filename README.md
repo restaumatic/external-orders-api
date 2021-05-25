@@ -75,6 +75,25 @@ The allowed messaging are determined by the following conversation state diagram
         "quantity": 1,
         "grossUnitPrice": 20.38,
         "vatRate": "B"
+        "specifications": [
+          {
+            "name": "Replace potatoes with rice"
+            "quantity": 1
+            "grossUnitPrice": 2.5
+            "vatRate": {
+              "tag": "IncludedInProduct"
+            }
+          },
+          {
+            "name": "Extra fuzzy drink"
+            "quantity": 1
+            "grossUnitPrice": 3,5
+            "vatRate": {
+              "tag": "Separate"
+              "contents": "A"
+            }
+          }
+        ]
       },
     ],
     "discounts": [
@@ -137,8 +156,14 @@ The event is rejected only if and only if not valid in terms of format, regardle
     1. `products` - required non empty array of objects
         1. `name` - required, not-empty text
         1. `quantity`" - required positive integer
-        1. `grossPrice` - optional positive number
+        1. `grossUnitPrice` - optional positive number
         1. `vatRate` - optional text, letter ranging from A to G (as defined in regulation https://www.gov.pl/web/finanse/do-31-lipca-zmien-oznaczenia-w-kasach-rejestrujacych), if provided then the restaurant can print fiscal receipt for the order
+        1. `specifications` - optional list of modifications of ordered product
+    1. `specifications`
+        1. `name` - required, not-empty text, max 256 characters long
+        1. `quantity`" - required positive integer
+        1. `grossUnitPrice` - optional positive number
+        1. `specificationVatRate` - optional value with required discrimator field `tag` taking value `IncludedInProduct` or `Separate`. When `tag` is set to `Separate`, field `content` is also required and takes value being letter from A to G (See `vatRate` in product)
     1. `discounts` - optional, non-empty array of objects containing:
         1. `name` - required text, max 256 characters long
         1. `description` - required text, max 256 characters long
