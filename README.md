@@ -29,9 +29,6 @@ The allowed messaging are determined by the following conversation state diagram
 
 ```
 {
-  "id": "6178",
-  "method": "OrderPlaced",
-  "params": {
     "externalOrderId": "89a3bb4a-9257-11eb-a8b3-0242ac130003",
     "externalOrderSourceReferenceName": "yyummyy.comm",
     "externalOrderReferenceId": "YYU-81947",
@@ -105,7 +102,6 @@ The allowed messaging are determined by the following conversation state diagram
     ],
     "deliveryFee" : 5.00
     "totalGrossPrice": 15.10
-  }
 }
 ```
 
