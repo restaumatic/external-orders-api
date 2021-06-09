@@ -29,11 +29,11 @@ The allowed messaging are determined by the following conversation state diagram
 
 ```
 {
-    "externalOrderId": "89a3bb4a-9257-11eb-a8b3-0242ac130003",
+    "externalOrderId": "89a3bb4a-9257-11eb-a8b3-0242ac130100",
     "externalOrderSourceReferenceName": "yyummyy.comm",
-    "externalOrderReferenceId": "YYU-81947",
-    "shortExternalOrderReferenceId": "947",
-    "restaurantId": 1567,
+    "externalOrderReferenceId": "YYU-100",
+    "shortExternalOrderReferenceId": "100",
+    "restaurantId": 466,
     "orderedAt": "2021-03-31T16:10:03Z",
     "subjectToReject": true,
     "subjectToAcceptBefore": "2021-03-31T16:20:03Z",
@@ -62,7 +62,7 @@ The allowed messaging are determined by the following conversation state diagram
       "fullName": "John Doe",
       "email": "john.doe@mymail.com",
       "phone": "+48123123123",
-      "locale": "PL",
+      "locale": "PL"
     },
     "customerOrderNote": "Please be on time",
     "vatId": "1234567890",
@@ -71,27 +71,27 @@ The allowed messaging are determined by the following conversation state diagram
         "name": "Chopped Pork + Potatos + Cabbage, XXL",
         "quantity": 1,
         "grossUnitPrice": 20.38,
-        "vatRate": "B"
+        "vatRate": "B",
         "specifications": [
           {
-            "name": "Replace potatoes with rice"
-            "quantity": 1
-            "grossUnitPrice": 2.5
+            "name": "Replace potatoes with rice",
+            "quantity": 1,
+            "grossUnitPrice": 2.5,
             "vatRate": {
               "tag": "IncludedInProduct"
             }
           },
           {
-            "name": "Extra fuzzy drink"
-            "quantity": 1
-            "grossUnitPrice": 3,5
+            "name": "Extra fuzzy drink",
+            "quantity": 1,
+            "grossUnitPrice": 3.5,
             "vatRate": {
-              "tag": "Separate"
+              "tag": "Separate",
               "contents": "A"
             }
           }
         ]
-      },
+      }
     ],
     "discounts": [
       {
@@ -100,7 +100,7 @@ The allowed messaging are determined by the following conversation state diagram
         "value": 10.28
       }
     ],
-    "deliveryFee" : 5.00
+    "deliveryFee" : 5.00,
     "totalGrossPrice": 15.10
 }
 ```
