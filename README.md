@@ -174,12 +174,12 @@ The event is rejected only if and only if not valid in terms of format, regardle
 
 ## Order Accepted
 
-> POST `[external orders proxy base URL]/orderAccepted`
+> POST `[external orders proxy base URL]/orderaccepted`
 
 ### Headers
 
 - `'Content-type': 'application/json'`
-- `'authorization': 'Token token=[API_TOKEN]'` where `API_TOKEN` is Restaumatic credential, provided by External Orders Proxy when enabling integration
+- `'authorization': 'Token token="[API_TOKEN]"'` where `API_TOKEN` is Restaumatic credential, provided by External Orders Proxy when enabling integration
 
 ### Body
 
@@ -203,12 +203,12 @@ The event is rejected only if and only if not valid in terms of format, regardle
 
 ## Order Rejected
 
-> POST `[external orders proxy base URL]/orderRejected`
+> POST `[external orders proxy base URL]/orderrejected`
 
 ### Headers
 
 - `'Content-type': 'application/json'`
-- `'authorization': 'Token token=[API_TOKEN]'` where `API_TOKEN` is Restaumatic credential, provided by External Orders Proxy when enabling integration
+- `'authorization': 'Token token="[API_TOKEN]"'` where `API_TOKEN` is Restaumatic credential, provided by External Orders Proxy when enabling integration
 
 ### Body
 
@@ -229,12 +229,12 @@ The event is rejected only if and only if not valid in terms of format, regardle
 
 ## Order in Delivery
 
-> POST `[external order proxy base URL]/orderInDelivery`
+> POST `[external order proxy base URL]/orderindelivery`
 
 ### Headers
 
 - `'Content-type': 'application/json'`
-- `'authorization': 'Token token=[API_TOKEN]'` where `API_TOKEN` is Restaumatic credential, provided by External Orders Proxy when enabling integration
+- `'authorization': 'Token token="[API_TOKEN]"'` where `API_TOKEN` is Restaumatic credential, provided by External Orders Proxy when enabling integration
 
 ### Body
 
