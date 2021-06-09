@@ -23,7 +23,7 @@ The allowed messaging are determined by the following conversation state diagram
 ### Headers
 
 - `'Content-type': 'application/json'`
-- `'authorization': 'Token token=[API_TOKEN]'` where `API_TOKEN` is External Order API client-specific credential, provided by Restaumatic when enabling the client
+- `'authorization': 'Token token="[API_TOKEN]"'` where `API_TOKEN` is External Order API client-specific credential, provided by Restaumatic when enabling the client
 
 ### Body
 
