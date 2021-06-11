@@ -31,8 +31,8 @@ The allowed messaging are determined by the following conversation state diagram
 {
     "externalOrderId": "89a3bb4a-9257-11eb-a8b3-0242ac130100",
     "externalOrderSourceReferenceName": "yyummyy.comm",
-    "externalOrderReferenceId": "YYU-100",
-    "shortExternalOrderReferenceId": "100",
+    "externalOrderReferenceId": "100100",
+    "shortExternalOrderReferenceId": "YYU100",
     "restaurantId": 466,
     "orderedAt": "2021-03-31T16:10:03Z",
     "subjectToReject": true,
@@ -174,7 +174,7 @@ The event is rejected only if and only if not valid in terms of format, regardle
 
 ## Order Accepted
 
-> POST `[external orders proxy base URL]/orderaccepted`
+> POST `[external orders proxy base URL]/orderAccepted`
 
 ### Headers
 
@@ -185,9 +185,14 @@ The event is rejected only if and only if not valid in terms of format, regardle
 
 ```
 {
-  "externalOrderId": "89a3bb4a-9257-11eb-a8b3-0242ac130003",
-  "restaumaticOrderId": "362718",
-  "overwrittenFullfillmentTime": "2021-03-31T17:40:00Z"
+    "externalOrderId": {
+        "source": "yyummyy.comm",
+        "externalId": "100100"
+        "displayId": "YYU100",
+    }
+    "overwrittenDeliveryTime": "2020-06-10T13:20:00Z",
+    "restaumaticOrderId": 4617289,
+    "restaurantId": 12345,
 }
 ```
 
@@ -203,7 +208,7 @@ The event is rejected only if and only if not valid in terms of format, regardle
 
 ## Order Rejected
 
-> POST `[external orders proxy base URL]/orderrejected`
+> POST `[external orders proxy base URL]/orderRejected`
 
 ### Headers
 
@@ -214,8 +219,14 @@ The event is rejected only if and only if not valid in terms of format, regardle
 
 ```
 {
-  "externalOrderId": "89a3bb4a-9257-11eb-a8b3-0242ac130003"
+    "externalOrderId": {
+        "source": "yyummyy.comm",
+        "externalId": "100100"
+        "displayId": "YYU100",
+    }
+    "restaurantId": 12345,
 }
+
 ```
 
 #### Description
