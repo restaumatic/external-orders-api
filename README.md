@@ -185,6 +185,7 @@ The event is rejected only if and only if not valid in terms of format, regardle
 
 ```
 {
+    "externalOrderUUID": "89a3bb4a-9257-11eb-a8b3-0242ac130100",
     "externalOrderId": {
         "source": "yyummyy.comm",
         "externalId": "100100"
@@ -219,6 +220,7 @@ The event is rejected only if and only if not valid in terms of format, regardle
 
 ```
 {
+    "externalOrderUUID": "89a3bb4a-9257-11eb-a8b3-0242ac130100",
     "externalOrderId": {
         "source": "yyummyy.comm",
         "externalId": "100100"
