@@ -127,7 +127,7 @@ The event is rejected only if and only if not valid in terms of format, regardle
       1. `CourierPickUp` - an order must only be prepared in a restaurant, it will be taken away by external courier
       1. `Delivery` -  an order must only be prepared and delivered by a restaurant, for this tag additional field `address` is required with fields:
           1. `street` - required non-empty text
-          2. `streetNumber` - required non-empty text
+          2. `streetNumber` - required text, however can be empty
           3. `apartmentNumber` - optional non-empty text
           4. `floor` - optional non-empty text
           5. `postCode` - optional non-empty text
