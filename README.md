@@ -33,7 +33,6 @@ The allowed messaging are determined by the following conversation state diagram
     "externalOrderSourceReferenceName": "yyummyy.comm",
     "externalOrderReferenceId": "100100",
     "shortExternalOrderReferenceId": "YYU100",
-    "pickupCode": "554",
     "restaurantId": 466,
     "orderedAt": "2021-03-31T16:10:03Z",
     "subjectToReject": true,
@@ -117,7 +116,6 @@ The event is rejected only if and only if not valid in terms of format, regardle
   1. `externalOrderSourceReferenceName` - required non-empty text. Name of the order source (e.g. portal) the order originates from. Allowed values should be agreed upon when setting up integration between the external order proxy and Restaumatic.
   1. `externalOrderReferenceId` - required non-empty text, unique (locally for `externalSourceReferenceName`) order id given by the source of the order. Display only.
   1. `shortExternalOrderReferenceId`, - optional non-empty text, unique (locally for `externalOrderReferenceId` and vaguagly for current time frame). Short id given by the source of an order, used for e.g. correlating order between restaurants, couriers and customers. Display only.
-  1. `pickupCode` - optional non-empty text
   1. `restaurantId` - required integer (64 bit), id of the restaurant in the system, most probably other than restaurant id in external order source
   1. `orderedAt` - required zulu (UTC) time in ISO 8601 format e.g. `2019-05-14T15:44:54.723Z`, what time the order was placed by a customer, if not known, the time the order was placed in External Order Proxy
   1. `subjectToReject` - required boolean. Tells if the order can be rejected.
@@ -126,7 +124,9 @@ The event is rejected only if and only if not valid in terms of format, regardle
       > currently required
   1. `fullfillmentMethod` - required object with required discriminator field `tag` taking value `Takeaway` or `Delivery` or `DineIn`. Tells how the restaurant is supposed to fulfill the order:
       1. `Takeaway` - an order must only be prepared in a restaurant, it will be taken away by customer
+          1. `pickupCode` - optional non-empty text
       1. `CourierPickUp` - an order must only be prepared in a restaurant, it will be taken away by external courier
+          1. `pickupCode` - optional non-empty text
       1. `Delivery` -  an order must only be prepared and delivered by a restaurant, for this tag additional field `address` is required with fields:
           1. `street` - required non-empty text
           2. `streetNumber` - required text, however can be empty
