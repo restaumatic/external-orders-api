@@ -167,7 +167,7 @@ The event is rejected only if and only if not valid in terms of format, regardle
       1. `value` - required positive value
   1. `tip` - optional, positive value
   1. `deliveryFee` - required, delivery fee
-  1. `totalGrossPrice` - required non-negative number, should be the sum of `product`s' grossPrices plus `deliveryFee` plus `fee` minus `discount`s' values
+  1. `totalGrossPrice` - required non-negative number, should be the sum of `product`s' grossPrices plus `deliveryFee` plus `tip` minus `discount`s' values
 
 ### Response
 
