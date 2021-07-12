@@ -69,14 +69,14 @@ The allowed messaging are determined by the following conversation state diagram
     "products": [
       {
         "name": "Chopped Pork + Potatos + Cabbage, XXL",
-        "quantity": 1,
-        "grossUnitPrice": 20.38,
+        "quantity": 2,
+        "grossUnitPrice": 15.00,
         "vatRate": "B",
         "specifications": [
           {
             "name": "Replace potatoes with rice",
             "quantity": 1,
-            "grossUnitPrice": 2.5,
+            "grossUnitPrice": 2.00,
             "vatRate": {
               "tag": "IncludedInProduct"
             }
@@ -84,7 +84,7 @@ The allowed messaging are determined by the following conversation state diagram
           {
             "name": "Extra fuzzy drink",
             "quantity": 1,
-            "grossUnitPrice": 3.5,
+            "grossUnitPrice": 3.00,
             "vatRate": {
               "tag": "Separate",
               "contents": "A"
@@ -97,12 +97,12 @@ The allowed messaging are determined by the following conversation state diagram
       {
         "name": "Cheap Mondays",
         "description": "All 15% off",
-        "value": 10.28
+        "value": 10.00
       }
     ],
     "tip": 2.00,
     "deliveryFee" : 5.00,
-    "totalGrossPrice": 17.10
+    "totalGrossPrice": 27.00
 }
 ```
 
