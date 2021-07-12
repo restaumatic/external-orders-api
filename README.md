@@ -90,7 +90,8 @@ The allowed messaging are determined by the following conversation state diagram
               "contents": "A"
             }
           }
-        ]
+        ],
+        "note": "without salt, please"
       }
     ],
     "discounts": [
@@ -161,6 +162,7 @@ The event is rejected only if and only if not valid in terms of format, regardle
           1. `quantity`" - required positive integer
           1. `grossUnitPrice` - required non-negative number
           1. `specificationVatRate` - optional value with required discrimator field `tag` taking value `IncludedInProduct` or `Separate`. When `tag` is set to `Separate`, field `content` is also required and takes value being letter from A to G (See `vatRate` in product)
+      1. `note` - optional, non-empty text, max 2064 characters, a note to this particular product
   1. `discounts` - optional, non-empty array of objects containing:
       1. `name` - required text, max 256 characters long
       1. `description` - required text, max 256 characters long
