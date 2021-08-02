@@ -40,6 +40,7 @@ The allowed messaging are determined by the following conversation state diagram
     "subjectToCancel": false,
     "fullfillmentMethod": {
       "tag": "Delivery",
+      "deliveryFee" : 5.00,
       "address": {
         "street": "High Street",
         "streetNumber": "12",
@@ -102,7 +103,6 @@ The allowed messaging are determined by the following conversation state diagram
       }
     ],
     "tip": 2.00,
-    "deliveryFee" : 5.00,
     "totalGrossPrice": 27.00
 }
 ```
@@ -128,18 +128,21 @@ The event is rejected only if and only if not valid in terms of format, regardle
           1. `pickupCode` - optional non-empty text
       1. `CourierPickUp` - an order must only be prepared in a restaurant, it will be taken away by external courier
           1. `pickupCode` - optional non-empty text
-      1. `Delivery` -  an order must only be prepared and delivered by a restaurant, for this tag additional field `address` is required with fields:
-          1. `street` - required non-empty text
-          2. `streetNumber` - required text, however can be empty
-          3. `apartmentNumber` - optional non-empty text
-          4. `floor` - optional non-empty text
-          5. `postCode` - optional non-empty text
-          6. `city` - required non-empty text
-          7. `country` - required, one of PL, GB, RU, RO, CZ, HR, SK, DE, NL, ES (potentially extended in the future)
-          8. `formattedAddress` - optional non-empty text, the address in the way it's supposed to be displayed, should be in accordance to other fields
-          9. `coordinates` - optional object
-              1. lat - required number, latitude
-              2. lon - required number, longitude
+          1. `deliveryFee` - optional, delivery fee 
+      1. `Delivery` -  an order must only be prepared and delivered by a restaurant
+          1. `deliveryFee` - optional, delivery fee 
+          1. `address`- required field:
+            1. `street` - required non-empty text
+            1. `streetNumber` - required text, however can be empty
+            1. `apartmentNumber` - optional non-empty text
+            1. `floor` - optional non-empty text
+            1. `postCode` - optional non-empty text
+            1. `city` - required non-empty text
+            1. `country` - required, one of PL, GB, RU, RO, CZ, HR, SK, DE, NL, ES (potentially extended in the future)
+            1. `formattedAddress` - optional non-empty text, the address in the way it's supposed to be displayed, should be in accordance to other fields
+            1. `coordinates` - optional object
+                1. lat - required number, latitude
+                2. lon - required number, longitude
       1. `DineIn` - an order must only be prepared and delivered to a restaurant table, could potentially include table number (e.g. via scanning qr code)
   1. `requestedFullfillmentTime` - optinal zulu (UTC) time in ISO 8601 format e.g "2019-05-14T15:44:54.723Z", when the restaurant is suppossed to fullfill the order, which is: either getting the order ready to be picked up by the external courier or customer (`fullfillmentMethod==Takeaway`) or getting the order delivered by the restaurant's courier (`fullfillmentMethod==Delivery`) or serving the order at the restaurant's table (`fullfillmentMethod==DineIn`). If not provided it's assumed to be as soon as possible.
   1. `subjectToOverwriteFullfillmentTime` - required boolean - if fullfilment time can be overwritten upon order acceptance
@@ -168,7 +171,6 @@ The event is rejected only if and only if not valid in terms of format, regardle
       1. `description` - required text, max 256 characters long
       1. `value` - required positive value
   1. `tip` - optional, positive value
-  1. `deliveryFee` - required, delivery fee
   1. `totalGrossPrice` - required non-negative number, should be the sum of `product`s' grossPrices plus `deliveryFee` plus `tip` minus `discount`s' values
 
 ### Response
