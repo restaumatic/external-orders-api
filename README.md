@@ -102,8 +102,15 @@ The allowed messaging are determined by the following conversation state diagram
         "value": 10.00
       }
     ],
+    "additions": [
+      {
+        "name": "Charity",
+        "description": "Thanks for your kindness",
+        "value": 4.00
+      }
+    ],
     "tip": 2.00,
-    "totalGrossPrice": 27.00
+    "totalGrossPrice": 31.00
 }
 ```
 
@@ -167,6 +174,10 @@ The event is rejected only if and only if not valid in terms of format, regardle
           1. `specificationVatRate` - optional value with required discrimator field `tag` taking value `IncludedInProduct` or `Separate`. When `tag` is set to `Separate`, field `content` is also required and takes value being letter from A to G (See `vatRate` in product)
       1. `note` - optional, non-empty text, max 2064 characters, a note to this particular product
   1. `discounts` - optional, non-empty array of objects containing:
+      1. `name` - required text, max 256 characters long
+      1. `description` - required text, max 256 characters long
+      1. `value` - required positive value
+  1. `additions` - optional, non-empty array of objects containing:
       1. `name` - required text, max 256 characters long
       1. `description` - required text, max 256 characters long
       1. `value` - required positive value
