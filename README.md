@@ -164,11 +164,13 @@ The event is rejected if and only if not valid in terms of format, regardless of
   1. `vatId` - optional non-empty text, vat tax payer identifier to be used for fiscalization
   1. `products` - required non empty array of objects
       1. `name` - required, not-empty text
+      1. `productId` - optional UUID, should match a product id from restaurants' menu in the system
       1. `quantity`" - required positive integer
       1. `grossUnitPrice` - required positive number, should include `grossUnitPrice`s of specifications (see below)
       1. `vatRate` - optional text, letter ranging from A to G (as defined in regulation https://www.gov.pl/web/finanse/do-31-lipca-zmien-oznaczenia-w-kasach-rejestrujacych), if provided then the restaurant can print fiscal receipt for the order
       1. `specifications` - optional list of modifications of ordered product
           1. `name` - required, not-empty text, max 256 characters long
+          1. `specificationId` - optional UUID, should match a modifier item id from restaurants' menu in the system
           1. `quantity`" - required positive integer
           1. `grossUnitPrice` - required non-negative number
           1. `specificationVatRate` - optional value with required discrimator field `tag` taking value `IncludedInProduct` or `Separate`. When `tag` is set to `Separate`, field `content` is also required and takes value being letter from A to G (See `vatRate` in product)
