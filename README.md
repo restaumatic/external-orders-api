@@ -184,7 +184,8 @@ The event is rejected if and only if not valid in terms of format, regardless of
       1. `description` - required text, max 256 characters long
       1. `value` - required positive value
   1. `tip` - optional, positive value
-  1. `totalGrossPrice` - required non-negative number, should be the sum of `product`s' grossPrices plus `deliveryFee` plus `tip` minus `discount`s' values
+  1. `externalServiceFee` - optional, positive value, some portals require the restaurateur to collect a portal service fee when using self-delivery and the order is paid by cash
+  1. `totalGrossPrice` - required non-negative number, should be the sum of `product`s' grossPrices plus `deliveryFee` plus `tip` plus `externalServiceFee` minus `discount`s' values
 
 ### Response
 
