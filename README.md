@@ -99,7 +99,11 @@ The allowed messaging are determined by the following conversation state diagram
       {
         "name": "Cheap Mondays",
         "description": "All 15% off",
-        "value": 10.00
+        "value": 10.00,
+        "paidBy": {
+          "tag": "PaidByExternal",
+          "externalPayerName": "yyummyy.comm"
+        }
       }
     ],
     "additions": [
@@ -179,6 +183,9 @@ The event is rejected if and only if not valid in terms of format, regardless of
       1. `name` - required text, max 256 characters long
       1. `description` - required text, max 256 characters long
       1. `value` - required positive value
+      1. `paidBy` - optional object specifying who pays for the discount. If not provided, defaults to portal-paid (external). Contains:
+          - `tag` - required, one of `PaidByRestaurant` or `PaidByExternal`
+          - `externalPayerName` - required when `tag` is `PaidByExternal`, text specifying the external payer name (e.g., "Pyszne.pl", "Uber Eats")
   1. `additions` - optional, non-empty array of objects containing:
       1. `name` - required text, max 256 characters long
       1. `description` - required text, max 256 characters long
